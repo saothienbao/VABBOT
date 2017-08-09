@@ -3,12 +3,14 @@ require 'json'
 require_relative '../../../app/ui/ui'
 require_relative 'questionnaire'
 require_relative 'show_ui_examples'
+require_relative 'chuyen_khoan'
 # Everything in this module will become private methods for Dispatch classes
 # and will exist in a shared namespace.
 module Commands
   # Mix-in sub-modules for threads
   include Questionnaire
   include ShowUIExamples
+  include Chuyen_Khoan
 
   # State 'module_function' before any method definitions so
   # commands are mixed into Dispatch classes as private methods.
@@ -22,7 +24,7 @@ module Commands
     if message_contains_location?
       handle_user_location
     else
-      say("Please try your request again and use 'Send location' button")
+      say("Vui lòng thử lại và bấm nút 'Send location'")
     end
     stop_thread
   end
@@ -34,8 +36,8 @@ module Commands
     @message.typing_on
     parsed = get_parsed_response(REVERSE_API_URL, "#{lat},#{long}")
     address = extract_full_address(parsed)
-    say "Coordinates of your location: Latitude #{lat}, Longitude #{long}. " \
-        "Looks like you're at #{address}"
+    say "Tọa độ vị trí của Quý khách: Vĩ độ #{lat}, Kinh độ #{long}. " \
+        "Quý khách đang tại #{address}"
     @message.typing_off
   end
 

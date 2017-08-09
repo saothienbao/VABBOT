@@ -13,37 +13,37 @@ module VABBotBase
             # through the persistent menu
             # (composing a message will be disabled)
             composer_input_disabled: false,
-            call_to_actions: [
+                        call_to_actions: [
               {
                 type: 'nested',
-                title: 'Sample UI elements',
+                title: 'Việt Á Bank',
                 call_to_actions: [
                   {
-                    title: 'Generic Template',
+                    title: 'Tầm Nhìn Và Sứ Mệnh',
                     type: 'postback',
                     payload: 'CAROUSEL'
                   },
                   {
-                    title: 'Button Template',
+                    title: 'Tin Tức',
                     type: 'postback',
-                    payload: 'BUTTON_TEMPLATE'
+                    payload: 'BUTTON_TINTUC'
                   },
                   {
-                    title: 'Image Attachment',
+                    title: 'Xem Tỷ Giá',
                     type: 'postback',
-                    payload: 'IMAGE_ATTACHMENT'
+                    payload: 'BUTTON_TYGIA'
                   }
                 ]
               },
               {
                 type: 'postback',
-                title: 'Location lookup',
+                title: 'Dịch Vụ',
                 payload: 'LOCATION'
               },
               {
                 type: 'postback',
-                title: 'Sample questionnaire',
-                payload: 'QUESTIONNAIRE'
+                title: 'Tiện Ích Chuyển Khoản',
+                payload: 'CHUYENKHOAN'
               }
             ]
           }

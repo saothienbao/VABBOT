@@ -18,11 +18,11 @@ module VABBotBase
         greeting: [
           {
             locale: 'default',
-            text: "Hello and welcome, {{user_first_name}}! Say 'hi!'"
+            text: "Xin chào, {{user_first_name}}!"
           },
           {
-            locale: 'fr_FR',
-            text: 'Bienvenue, {{user_first_name}}!'
+            locale: 'en_US',
+            text: 'Hello, {{user_first_name}}!'
           }
         ]
       }, access_token: ENV['ACCESS_TOKEN'])
